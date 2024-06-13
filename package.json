@@ -1,0 +1,15 @@
+{
+  "name": "playpulse",
+  "version": "1.0.0",
+  "description": "A video Streaming App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Backend"
+  ],
+  "author": "Rahul Jain",
+  "license": "ISC"
+}
