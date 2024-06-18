@@ -1,5 +1,6 @@
 import { v2 as cloudinary } from "cloudinary";
 import fs from "fs"; // FileSystem
+import url from "url";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -27,4 +28,18 @@ const uploadOnCloudinary = async (localFilePath) => {
   }
 };
 
-export { uploadOnCloudinary };
+const deleteFromCloudinary = async (fileUrl) => {
+  try {
+    const parsedUrl = url.parse(fileUrl);
+    const pathSegments = parsedUrl.pathname.split("/");
+    const publicIdWithExtension = pathSegments.slice(-1)[0];
+    const publicId = publicIdWithExtension.split(".")[0];
+
+    const response = await cloudinary.uploader.destroy(publicId);
+    return response;
+  } catch (error) {
+    return null;
+  }
+};
+
+export { uploadOnCloudinary, deleteFromCloudinary };
