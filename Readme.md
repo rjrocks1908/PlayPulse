@@ -110,3 +110,7 @@ PlayPulse is a video streaming app where users can upload and publish videos. Th
 2. `/toggle/c/:commentId` - POST: Toggles the like status of a comment.
 3. `/toggle/t/:tweetId` - POST: Toggles the like status of a tweet.
 4. `/videos` - GET: Returns liked videos.
+
+## Future Commitments and Upgrades
+
+1. **Frontend Development**: Building the frontend using the latest technologies.
